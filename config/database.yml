@@ -23,3 +23,7 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+  database: postgres://db_2111140049_user:1MAVXG9YrglwIK65io2tAOgQySqlkF2u@dpg-ckej7ettj22c73ev7ppg-a/db_2111140049
+  username: 1MAVXG9YrglwIK65io2tAOgQySqlkF2u
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
