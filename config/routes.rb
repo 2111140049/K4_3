@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/top/top_logout_path"
   #get "/top_logout_path"
+  get '/top_logout_path', to: 'top#top_logout_path', as: 'top_logout_path'
   get 'top/main'
   post 'top/login'
   root 'top#main'
