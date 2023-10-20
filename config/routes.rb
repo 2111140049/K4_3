@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/top/top_logout_path"
+  #get "/top_logout_path"
   get 'top/main'
   post 'top/login'
   root 'top#main'

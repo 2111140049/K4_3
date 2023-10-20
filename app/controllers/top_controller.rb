@@ -8,16 +8,16 @@ class TopController < ApplicationController
     end
     
     def login
-        #User.find_by(params[:uid])== 'kindai' and params[:pass] == 'sanriko'
-        if  params[:uid]== 'kindai' and params[:pass] == 'sanriko'
+        @user = User.find(1)
+        if User.find_by(uid: params[:uid]) and User.find_by(pass: params[:pass] )
             session[:login_uid]=params[:uid]
             redirect_to top_main_path
         else
-            render "e"
+            render "flogin"
         end
     end
-    def logout
-        session.delate(:login_uid)
+    def top_logout_path
+        session.delete(:login_uid)
         redirect_to top_main_path
     end
 end
