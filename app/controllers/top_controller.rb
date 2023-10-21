@@ -10,6 +10,8 @@ class TopController < ApplicationController
     def login
         
         @user = User.find(1)
+        @user.pass = BCrypt::Password.create("sanriko")
+        @user.save
         if User.find_by(uid: params[:uid]) 
              require 'bcrypt'
              @user.pass = BCrypt::Password.create("sanriko")
